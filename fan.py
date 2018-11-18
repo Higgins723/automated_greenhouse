@@ -3,6 +3,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 pin = 21
 GPIO.setup(pin, GPIO.OUT)
+GPIO.output(pin, GPIO.HIGH)
 
 def fanControl(value):
     if value == 'on':

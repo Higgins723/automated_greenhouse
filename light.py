@@ -3,6 +3,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 pin = 16
 GPIO.setup(pin, GPIO.OUT)
+GPIO.output(pin, GPIO.HIGH)
 
 def lightControl(value):
     if value == 'on':
