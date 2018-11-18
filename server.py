@@ -1,11 +1,10 @@
 import flask
 import json
 from flask import request, jsonify
-from temp import getTemp
 from pump import pumpControl
 from light import lightControl
 from fan import fanControl
-from moisture import getMoisture
+from moisture import getData
 
 # GPIO | Relay
 #--------------
@@ -15,13 +14,9 @@ from moisture import getMoisture
 
 app = flask.Flask(__name__)
 
-@app.route('/api/v1/getTemp', methods=['GET'])
-def api_all():
-    return jsonify(getTemp())
-
-@app.route('/api/v1/getMoisture', methods=['GET'])
+@app.route('/api/v1/getData', methods=['GET'])
 def moisture():
-    return jsonify(getMoisture())
+    return jsonify(getData())
 
 @app.route('/api/v1/pump', methods=['POST'])
 def pump():
