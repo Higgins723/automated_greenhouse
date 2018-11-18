@@ -1,12 +1,13 @@
 import serial
 import json
 
-ser = serial.Serial('/dev/ttyACM0', 9600)
 
 def getData():
+    ser = serial.Serial('/dev/ttyACM0', 9600)
     data = ser.readline()
     if data:
-        return json.loads(data.decode('utf-8').replace("'", '"'))
+        value = json.loads(data.decode('utf-8').replace("'", '"'))
+        return value
     else:
         return {
           "error": "No moisture data found!"
