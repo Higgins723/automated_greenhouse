@@ -4,7 +4,7 @@ from flask import request, jsonify
 from pump import pumpControl
 from light import lightControl
 from fan import fanControl
-from moisture import getData
+from data import getData
 
 # GPIO | Relay
 #--------------
