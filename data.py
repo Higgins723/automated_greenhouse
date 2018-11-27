@@ -12,3 +12,18 @@ def getData():
         return {
           "error": "No moisture data found!"
         }
+
+def data():
+    try:
+        data = getData()
+        if type(data) is dict:
+            return data
+    except:
+        return False
+
+def returnData():
+    d = data()
+    if d != False and d is not None and d != "":
+        return d
+    else:
+        return returnData()
