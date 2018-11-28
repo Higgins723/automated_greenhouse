@@ -6,6 +6,8 @@ from light import lightControl
 from fan import fanControl
 from data import returnData
 
+from flask_cors import CORS
+
 # GPIO | Relay
 #--------------
 # 16     01    light
@@ -13,6 +15,7 @@ from data import returnData
 # 21     03    fan
 
 app = flask.Flask(__name__)
+CORS(app)
 
 @app.route('/api/v1/getData', methods=['GET'])
 def moisture():
